@@ -1,0 +1,22 @@
+@media screen and (max-width:992px) {
+    section {
+        height: 100%;
+    }
+
+    .gallery {
+        flex-wrap: wrap;
+        height: 100%;
+    }    
+
+ .gallery__left-img {
+    order: 1;
+ }
+
+    .gallery__left-img,
+    .gallery__center-left,
+    .gallery__center-right,
+    .gallery__right {
+        
+        width: 50%;
+    }
+}
