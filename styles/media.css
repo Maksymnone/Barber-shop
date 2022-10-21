@@ -1,22 +1,153 @@
-@media screen and (max-width:992px) {
-    section {
-        height: 100%;
-    }
+@media screen and (max-width: 992px) {
+  section {
+    height: 100%;
+  }
 
-    .gallery {
-        flex-wrap: wrap;
-        height: 100%;
-    }    
+  .gallery {
+    flex-wrap: wrap;
+    height: 100%;
+  }
 
- .gallery__left-img {
+  .gallery__left-img {
     order: 1;
+    animation: right 0.6s linear;
+  }
+  .gallery__right {
+  animation: left .6s linear;
+}
+
+  .gallery__img {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+
+  .header > nav {
+  width: 80%;
+}
+
+  .services {
+    flex-direction: column-reverse;
+  }
+
+  .services__bg,
+  .services__list {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .team-container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .barber {
+    width: 45%;
+    height: 670px;
+    margin-bottom: 5rem;
+  }
+
+ .contacts {
+    flex-wrap: wrap;
+    height: 100%;
+ }
+ .form-container, .iframe-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
  }
 
-    .gallery__left-img,
-    .gallery__center-left,
-    .gallery__center-right,
-    .gallery__right {
-        
-        width: 50%;
-    }
+ .footer {
+    flex-wrap: wrap;
+ }
+ .footer__contacts,
+ .hours,
+ .social-links {
+    width: 100%;
+    margin-bottom: 5rem;
+ }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+    height: 100%;
+  }
+
+  .gallery {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .gallery__left-img {
+    order: 0;
+    animation: right 0.6s linear;
+  }
+
+  .gallery__center-left > img:first-child {
+  animation: left 0.7s linear;
+}
+
+.gallery__center-left > img:last-child {
+  animation: right 0.8s linear;
+}
+
+.gallery__center-right >img:first-child {
+  animation: left 0.9s linear;
+}
+.gallery__center-right >img:last-child {
+  animation: right 1s linear;
+}
+.gallery__right {
+  animation: left 1.1s linear;
+}
+
+  .gallery__img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .services {
+    flex-direction: column-reverse;
+  }
+
+  .services__bg {
+    display: none;
+  }
+
+  .services__list {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .team-container {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+  }
+
+  .barber {
+    width: 80%;
+    height: 870px;
+    margin-bottom: 5rem;
+  }
+
+ .contacts {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    height: 100%;
+ }
+ .form-container, .iframe-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
+ }
+
+ .footer {
+    flex-wrap: wrap;
+ }
+ .footer__contacts,
+ .hours,
+ .social-links {
+    width: 100%;
+    margin-bottom: 5rem;
+ }
 }

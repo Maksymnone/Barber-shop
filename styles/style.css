@@ -29,7 +29,6 @@ section {
   overflow: hidden;
 }
 
-
 li {
   list-style: none;
 }
@@ -41,15 +40,16 @@ ul {
 
 /* header styles start */
 header {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 13vh;
+  height: 9.5vh;
   background-color: var(--black-color);
   padding-right: 3rem;
 }
@@ -73,7 +73,7 @@ header {
 /* header styles end */
 /* gallery section styles start  */
 .gallery {
-    padding-top: 7rem;
+  padding-top: 7rem;
 }
 
 .gallery,
@@ -87,9 +87,50 @@ header {
   flex-direction: column;
 }
 
+.gallery__img {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
 .gallery img {
   width: 90%;
 }
+
+.gallery__center-left {
+  animation: left 1s linear;
+}
+
+.gallery__left-img {
+  animation: left 2s linear;
+}
+.gallery__center-right {
+  animation: right 1s linear;
+}
+
+.gallery__right {
+  animation: right 2s linear;
+}
+
+@keyframes left {
+  from {
+    left: -50%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes right {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0px;
+  }
+}
+
 .gallery__center-left > img:first-child,
 .gallery__center-right > img:first-child {
   margin-bottom: 2rem;
@@ -112,18 +153,137 @@ header {
   text-align: center;
   width: 50%;
   row-gap: 5rem;
+  position: relative;
 }
 .services__item {
-    width: 33.5%;
-
+  width: 33.5%;
+  position: absolute;
 }
 
 .services__item img,
 .services__item a,
 .services__item p {
-    width: 100%;
+  width: 100%;
 }
 
+.service-one {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: first-circel 7s linear infinite;
+}
+
+.service-two {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: second-circel 7s linear infinite;
+}
+.service-three {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: third-circel 7s linear infinite;
+}
+
+.service-four {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: fourth-circel 7s linear infinite;
+}
+
+@keyframes first-circel {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 50%;
+  }
+  50% {
+    top: 377px;
+    left: 50%;
+  }
+  75% {
+    top: 377px;
+    left: 0%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes second-circel {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 377px;
+    left: 0;
+  }
+  50% {
+    top: 377px;
+    left: -50%;
+  }
+  75% {
+    top: 0;
+    left: -50%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes third-circel {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: -400px;
+    left: 0;
+  }
+  50% {
+    top: -400px;
+    left: 50%;
+  }
+  75% {
+    top: 0;
+    left: 50%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes fourth-circel {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: -50%;
+  }
+  50% {
+    top: -400px;
+    left: -50%;
+  }
+  75% {
+    top: -400px;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
 
 .services__list p {
   margin: 0;
@@ -141,12 +301,13 @@ header {
 }
 
 .services__bg > img {
-    width: 100%;
+  width: 100%;
 }
 
 /* Team section styles*/
 .team {
-    text-align: center;
+  text-align: center;
+  padding-top: 5rem;
 }
 
 .team__title {
@@ -156,33 +317,9 @@ header {
 }
 
 .team-container {
-    display: flex;
-    justify-content: space-between;
-    height: 60vh;
-    
-}
-
-.one {
-  background-image: url(../img/barber1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.two {
-  background-image: url(../img/barber2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.three {
-  background-image: url(../img/barber3.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.four {
-  background-image: url(../img/barber4.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  height: 60vh;
 }
 
 .barber {
@@ -208,7 +345,7 @@ header {
   font-style: normal;
   font-size: 3.6rem;
   width: 100%;
-  height: 24%;
+  height: 20%;
   margin: 0%;
   border-bottom-left-radius: 3.3rem;
   border-bottom-right-radius: 3.3rem;
@@ -225,4 +362,143 @@ header {
 .team-container:hover > .barber:not(:hover) {
   filter: brightness(20%);
   transition: all 0.7s;
+}
+
+.one {
+  background-image: url(../img/barber1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+      background-position: center;
+}
+
+.two {
+  background-image: url(../img/barber2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+      background-position: center;
+}
+.three {
+  background-image: url(../img/barber3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+      background-position: center;
+}
+
+.four {
+  background-image: url(../img/barber4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+      background-position: center;
+}
+
+/* Team section styles end */
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+  height: 70vh;
+}
+
+.form-container {
+  margin-right: 5rem;
+}
+
+.form__title {
+  font-size: 6.4rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.form {
+  background-color: var(--bg-contacts-color);
+}
+
+.form input,
+.form textarea {
+  font-family: "Rosario";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  margin: 1.5rem 1rem;
+}
+
+.form input {
+  width: 40%;
+}
+
+.form textarea {
+  width: 90%;
+}
+/* form styles end */
+
+/* footer styles start  */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 85%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer span,
+.social-links__title,
+.hours-title {
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  justify-content: center;
+}
+
+.instagram::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../img/instagram-icon.png);
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  background-position: center;
+}
+
+.facebook::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../img/facebook-icon.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  background-position: center;
+}
+
+.twitter::before {
+  content: "";
+  display: inline-block;
+  background-image: url(../img/twitter-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  background-position: center;
 }
