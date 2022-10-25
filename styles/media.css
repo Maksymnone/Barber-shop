@@ -1,6 +1,7 @@
 @media screen and (max-width: 992px) {
   section {
     height: 100%;
+    padding: 0 1.5rem;
   }
 
   .gallery {
@@ -23,6 +24,10 @@
 
   .header > nav {
   width: 80%;
+}
+
+.navbar-nav a:hover {
+  transform: scale(1.05);
 }
 
   .services {
